@@ -37,7 +37,6 @@ function createImageGrid() {
     
     // List of images from the images folder
     const images = [
-        'images/69898462298__68CB9F16-887E-4055-97D3-7A1D4FDEBDA4.jpeg',
         'images/IMG_0019.JPG',
         'images/IMG_1449.JPG',
         'images/IMG_2765.PNG',
@@ -52,26 +51,14 @@ function createImageGrid() {
         'images/IMG_7792.jpeg'
     ];
     
-    // Calculate optimal grid size for even distribution
-    const cellSize = 250; // Base cell size in pixels
-    const gap = 2; // Gap between cells
-    const padding = 2; // Grid padding
+    // Fixed 4x3 grid layout
+    const columns = 4;
+    const rows = 3;
+    const gridItems = columns * rows; // 12 items total
     
-    // Calculate number of columns that fit evenly
-    const viewportWidth = window.innerWidth;
-    const availableWidth = viewportWidth - (padding * 2);
-    const columns = Math.floor((availableWidth + gap) / (cellSize + gap));
-    
-    // Calculate number of rows needed to fill viewport height
-    const viewportHeight = window.innerHeight;
-    const availableHeight = viewportHeight - (padding * 2);
-    const rows = Math.ceil((availableHeight + gap) / (cellSize + gap));
-    
-    // Total items needed to fill the grid evenly
-    const gridItems = columns * rows;
-    
-    // Set grid template columns for even distribution
+    // Set grid template columns for 4 columns
     grid.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
+    grid.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
     
     // Create grid items with images
     for (let i = 0; i < gridItems; i++) {
