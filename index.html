@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phil's Bachelor Party - Miami 2026</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Image Grid Background -->
+    <div class="image-grid-background" id="imageGrid"></div>
+    
+    <!-- Overlay for readability -->
+    <div class="overlay"></div>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <header class="hero">
+            <h1 class="hero-title">
+                <span class="name">Philip Anderson</span>
+                <span class="nicknames">"Phil, Panda, Stupid Fat Panda"</span>
+            </h1>
+            <div class="hero-subtitle">
+                <p class="location">📍 Miami, Florida</p>
+                <p class="dates">January 16-19, 2026</p>
+            </div>
+            <div class="hero-tagline">The Ultimate Bachelor Party Experience</div>
+        </header>
+
+        <!-- Countdown Timer -->
+        <section class="countdown-section">
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">0</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">0</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">0</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">0</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Below Fold (Blurred until quiz completed) -->
+        <div class="below-fold-content" id="belowFoldContent">
+            <!-- Blur Overlay (shown when quiz not completed) -->
+            <div class="content-blur-overlay" id="contentBlurOverlay">
+                <div class="quiz-modal" id="quizModal">
+                    <div class="quiz-modal-content">
+                        <div class="quiz-header">
+                            <h2>🔒 Security Question</h2>
+                            <p class="quiz-subtitle">Answer these questions to unlock the content</p>
+                        </div>
+                        <form id="quizForm" class="quiz-form">
+                            <div class="quiz-question">
+                                <label for="fiance">1. What is Phil's fiance's name?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="fiance" value="Sarah" required>
+                                        <span>Sarah</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="fiance" value="Hope" required>
+                                        <span>Hope</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="fiance" value="Jake" required>
+                                        <span>Jake</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="fiance" value="Bridget" required>
+                                        <span>Bridget</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="quiz-question">
+                                <label class="fill-blank-question-label">
+                                    2. Phil has trouble ________?
+                                </label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="trouble" value="Burping" required>
+                                        <span>Burping</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="trouble" value="Sneezing" required>
+                                        <span>Sneezing</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="trouble" value="Farting" required>
+                                        <span>Farting</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="trouble" value="Cumming" required>
+                                        <span>Cumming</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="quiz-question">
+                                <label class="fill-blank-label">
+                                    3. Phil's room number in the fraternity house was 
+                                    <input type="text" id="roomNumber" name="roomNumber" placeholder="________" required class="fill-blank-input">
+                                    ?
+                                </label>
+                            </div>
+
+                            <div class="quiz-error" id="quizError"></div>
+                            <button type="submit" class="quiz-submit-btn">Unlock Content</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agenda/Itinerary -->
+            <section class="agenda-section" id="agendaSection">
+                <h2 class="section-title">The Agenda</h2>
+            <div class="agenda">
+                <div class="agenda-day">
+                    <div class="day-header">
+                        <span class="day-date">Thursday, Jan 16</span>
+                        <span class="day-theme">Arrival & Welcome</span>
+                    </div>
+                    <ul class="day-events">
+                        <li><span class="time">3:00 PM</span> Check-in & Settle In</li>
+                        <li><span class="time">6:00 PM</span> Welcome Dinner at <em>Joe's Stone Crab</em></li>
+                        <li><span class="time">9:00 PM</span> South Beach Bar Crawl</li>
+                        <li><span class="time">11:00 PM</span> Late Night at LIV</li>
+                    </ul>
+                </div>
+
+                <div class="agenda-day">
+                    <div class="day-header">
+                        <span class="day-date">Friday, Jan 17</span>
+                        <span class="day-theme">Beach & Boats</span>
+                    </div>
+                    <ul class="day-events">
+                        <li><span class="time">10:00 AM</span> Brunch at <em>News Cafe</em></li>
+                        <li><span class="time">12:00 PM</span> Beach Day at South Beach</li>
+                        <li><span class="time">2:00 PM</span> Deep Sea Fishing Charter</li>
+                        <li><span class="time">7:00 PM</span> Dinner Cruise on Biscayne Bay</li>
+                        <li><span class="time">10:00 PM</span> Wynwood Art District Exploration</li>
+                    </ul>
+                </div>
+
+                <div class="agenda-day">
+                    <div class="day-header">
+                        <span class="day-date">Saturday, Jan 18</span>
+                        <span class="day-theme">The Big Day</span>
+                    </div>
+                    <ul class="day-events">
+                        <li><span class="time">11:00 AM</span> Pool Party at <em>Delano</em></li>
+                        <li><span class="time">3:00 PM</span> Jet Ski Adventure</li>
+                        <li><span class="time">6:00 PM</span> Steakhouse Dinner at <em>Prime 112</em></li>
+                        <li><span class="time">9:00 PM</span> VIP Nightclub Experience</li>
+                        <li><span class="time">12:00 AM</span> After-Hours Shenanigans</li>
+                    </ul>
+                </div>
+
+                <div class="agenda-day">
+                    <div class="day-header">
+                        <span class="day-date">Sunday, Jan 19</span>
+                        <span class="day-theme">Recovery & Farewell</span>
+                    </div>
+                    <ul class="day-events">
+                        <li><span class="time">10:00 AM</span> Recovery Brunch</li>
+                        <li><span class="time">12:00 PM</span> Last Beach Session</li>
+                        <li><span class="time">3:00 PM</span> Check-out & Goodbyes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>Let's give Phil the send-off he deserves! 🎉</p>
+                <p class="footer-note">See you in Miami, January 2026</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
