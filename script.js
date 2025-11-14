@@ -56,35 +56,42 @@ function createImageGrid() {
     const rows = 3;
     const gridItems = columns * rows; // 12 items total
     
+    // Shuffle images array to randomize order (Fisher-Yates shuffle)
+    const shuffledImages = [...images];
+    for (let i = shuffledImages.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledImages[i], shuffledImages[j]] = [shuffledImages[j], shuffledImages[i]];
+    }
+    
     // Set grid template columns for 4 columns
     grid.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
     grid.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
     
-    // Create grid items with images
+    // Create grid items with images - each image used exactly once
     for (let i = 0; i < gridItems; i++) {
         const item = document.createElement('div');
         item.className = 'grid-item';
         
-        // Randomly select an image
-        const randomImage = images[Math.floor(Math.random() * images.length)];
+        // Use image from shuffled array (each image used exactly once)
+        const imageToUse = shuffledImages[i];
         
         // Preload image first, then set as background
         const img = new Image();
         img.onload = function() {
-            console.log('Image loaded:', randomImage);
+            console.log('Image loaded:', imageToUse);
             // Set background image after image loads - ensure square fit
-            item.style.backgroundImage = `url('${randomImage}')`;
+            item.style.backgroundImage = `url('${imageToUse}')`;
             item.style.backgroundSize = 'cover';
             item.style.backgroundPosition = 'center';
             item.style.backgroundRepeat = 'no-repeat';
             item.style.opacity = '0.8';
         };
         img.onerror = function() {
-            console.error('Failed to load image:', randomImage);
+            console.error('Failed to load image:', imageToUse);
             // Fallback to gradient if image fails
             item.style.background = 'linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(157, 0, 255, 0.1))';
         };
-        img.src = randomImage;
+        img.src = imageToUse;
         
         // Random delay for animation
         const delay = Math.random() * 5;
